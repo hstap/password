@@ -1,0 +1,16 @@
+import requests
+
+server_username = requests.get("https://raw.githubusercontent.com/hstap/password/main/pass").text
+server_password = requests.get("https://raw.githubusercontent.com/hstap/password/main/user").text
+username = input("[->] Enter Username : ")
+if username in server_username:
+    pass
+else:
+    print("Wrong Username")
+    exit()
+password = input("[->] Enter Password : ")
+if password in server_password:
+    pass
+else:
+    print("Wrong Password")
+    exit()
